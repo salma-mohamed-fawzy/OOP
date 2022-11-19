@@ -1,0 +1,54 @@
+#include<iostream>
+#include<string>
+using namespace std;
+struct football_players_team
+{
+	string name;
+	int player_number;
+	int num_of_scores;
+};
+/*void teamscores (football_players_team array[5])
+{
+    int total_points=0;
+    cout << "the total points earned by the team is ";
+    for (int i = 0; i <= 1; i++)
+    {
+        total_points = total_points + array[i].num_of_scores;
+    }
+    cout << " total points is " << total_points << endl;
+    int count = 0;
+    int max=0;
+    for (int i = 0; i <= 1; i++)                   //the player who scored most...was sooooooooo hard
+    {
+        for (int k = 0; k <= 1; k++)
+        {
+            if (array[i].num_of_scores == array[k].num_of_scores)
+                count++;
+            if (count >= max)
+                max = array[i].num_of_scores;
+        }
+            if (max == array[i].num_of_scores)
+            cout << "the player who has scored most is " << array[i].name;
+    }
+}*/
+
+int main()
+{
+    football_players_team array[5];
+    for (int i = 0; i <= 1; i++)
+    {
+        cout << "please enter the player's name\n";
+        cin >> array[i].name;
+        cout << "please enter the player's number\n";
+        cin >> array[i].player_number;
+        cout << "please enter the number of player's scores\n";
+        cin >> array[i].num_of_scores;
+    }
+    for (int i = 0; i <= 1; i++)
+    {
+        cout << "the player " << array[i].name << " who has the number" << array[i].player_number << " has scored" << array[i].num_of_scores << " goals" << endl;
+    }
+    teamscores(array);
+	system("pause");
+	return 0;
+}
