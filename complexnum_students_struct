@@ -1,0 +1,68 @@
+#include<iostream>
+#include <string>
+using namespace std;
+
+/*struct complex_num
+{
+	int real;
+	int imaginary;
+};
+int main()
+{
+	complex_num var1;
+	complex_num var2;
+	int sum1,sum2;
+	cout << "please enter the first real\n";
+	cin >> var1.real;
+	cout << "please enter the second real\n";
+	cin >> var2.real;
+	cout << "please enter the first imaginary\n";
+	cin >> var1.imaginary;
+	cout << "please enter the second imaginary\n";
+	cin >> var2.imaginary;
+	sum1 =var1.real + var2.real;
+	sum2 = var1.imaginary + var2.imaginary;
+	cout << "the complex number is " << sum1 << " + " << sum2 << " i "<<endl;
+
+	system("pause");
+	return 0;
+}*/
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+struct marks
+{
+	int no_of_student;
+	string name;
+	float chem_mark;
+	float maths_mark;
+	float physics_mark;
+};
+
+int main()
+{
+	marks array[5];
+	for (int i = 0; i <= 4; i++)
+	{
+		cout << "please enter the number \n";
+		cin>> array[i].no_of_student;
+		cout << "please enter the name \n";
+		cin >> array[i].name;
+		cout << "please enter the chemistry_degree \n";
+		cin >> array[i].chem_mark;
+		cout << "please enter the maths_degree \n";
+		cin >> array[i].maths_mark;
+		cout << "please enter the physics_degree \n";
+		cin >> array[i].physics_mark;
+	}
+	float percentage;
+
+	for (int i = 0; i <= 5; i++)
+	{
+		percentage = (array[i].chem_mark + array[i].maths_mark + array[i].physics_mark)/3;
+		cout << array[i].name << " has the percentage of " << percentage <<" % " <<endl;
+	}
+	
+	system("pause");
+	return 0;
+}
+
+
