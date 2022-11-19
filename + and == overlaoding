@@ -1,0 +1,112 @@
+#include<iostream>
+using namespace std;
+#include<string>
+class cstring
+{private:
+	string str;
+public:
+	cstring() {};
+	cstring(string x)
+	{
+		str = x;
+	}
+	string get_str()
+	{
+		return str;
+	}
+	cstring operator+ (cstring x)
+	{
+		cstring temp(x);
+		temp.str = str + x.str;
+		return temp;
+	}
+	void operator==(cstring x)
+	{
+    if (str == x.str)
+	cout<<"the two objects are equal\n";
+	else
+	cout<<"they are not equal\n";
+	}
+};
+int main()
+{
+	string st1, st2;
+	cout << "enter the first string\n";
+	cin >> st1;
+	cout << "enter the second string\n";
+	cin >> st2;
+	cstring strobj1(st1);
+	cstring strobj2(st2);
+	cstring result;
+	result = strobj1 + strobj2;
+	cout << " the result is " << result.get_str();
+	strobj1.operator==(strobj2);                                  //ghalaaaaaaaaaaat
+	system("pause");
+	return 0;
+}
+/*class binary
+{
+private:
+	float num;
+public:
+	binary() {};
+	binary(float x)
+	{
+		num = x;
+	}
+	float get_num()
+	{
+		return num;
+	}
+	binary operator+ (binary x)
+	{
+		binary temp;
+		temp.num = num + x.num;
+		return temp;
+	}
+	binary operator- (binary x)
+	{
+		binary temp;
+		if (num > x.num)
+			temp.num = num - x.num;
+		else
+			temp.num = x.num - num;
+		return temp;
+	}
+	binary operator* (binary x)
+	{
+		binary temp;
+		temp.num = num * x.num;
+		return temp;
+	}
+	binary operator/ (binary x)
+	{
+		binary temp;
+		if (x.num != 0)
+			temp.num = num / x.num;
+		return temp;
+	}
+};
+int main()
+{
+	float x;
+	cout << "please enter the first number\n";
+	cin >> x;
+	float y;
+	cout << "please enter the second number\n";
+	cin >> y;
+	binary obj1(x);
+	binary obj2(y);
+	binary res1, res2, res3, res4;
+	res1 = obj1 + obj2;
+	res2 = obj1 - obj2;
+	res3 = obj1 * obj2;
+	res4 = obj1 / obj2;
+	cout << res1.get_num() << endl;
+	cout << res2.get_num() << endl;
+	cout << res3.get_num() << endl;
+	cout << res4.get_num() << endl;
+
+	system("pause");
+	return 0;
+}*/
