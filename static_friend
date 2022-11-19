@@ -1,0 +1,166 @@
+#include<iostream>
+using namespace std;
+/*class rectangle;
+class square
+{
+private:
+	float side;
+public:
+	square()
+	{}
+	square(float x) { side = x; };
+	float get_s_area() 
+	{
+		return side * side;
+	}
+	friend float operator+ (square y, rectangle x);
+	friend void largest(square y, rectangle x);
+};
+class rectangle
+{
+private:
+	float height;
+	float width;
+public: 
+	rectangle()
+	{}
+	rectangle(float x, float y)
+	{
+		height = x;
+		width = y;
+	}
+	float get_r_area()
+	{
+		return height*width;
+	}
+	friend float operator+ (square y, rectangle x);
+	friend void largest(square y, rectangle x);
+};
+float operator+ (square y,rectangle x)
+{
+	float z;
+	z = y.get_s_area() + x.get_r_area();
+	return z;
+}
+void largest(square y, rectangle x)
+{
+	if (y.get_s_area() > x.get_r_area())
+		cout << " square ";
+	else if (y.get_s_area() < x.get_r_area())
+		cout << " rectangle ";
+	else
+		cout << " they are equal\n";
+}
+
+int main()
+{
+	float sid=0.0;
+	float ht=0.0;
+	float wds=0.0;
+	cout << "please enter the side of square\n";
+	cin >> sid;
+	cout << "please enter the height and width of square (ordered)\n";
+	cin >> ht >> wds;
+	square sq_obj(sid);
+	rectangle rec_obj(ht,wds);
+	float sum;
+	sum = sq_obj + rec_obj;
+	cout << "the sum of two areas equals  " << sum << endl;
+	cout << "the largest area is the area of ";
+	largest(sq_obj,rec_obj);
+
+	system("pause");
+	return 0;
+}*/
+class div_sales
+{
+private:
+	float first_half=0.0;
+	float second_half=0.0;
+	static float total_sales;
+public:
+	div_sales()
+	{
+	}
+	void set(float x, float y)
+	{
+		first_half = x;
+		second_half = y;
+	}
+	float getfun1() { return first_half; }
+	float getfun2() { return second_half; }
+	float total_fun()
+	{
+		float total = first_half + second_half;
+		return total;
+	}
+	void display1(float x, float y)
+	{
+		cout << "\nin the first diviation \n";
+		cout << "the total sales\t " << total_fun() << endl;
+	}
+	void display2(float x, float y)
+	{
+		cout << "\nin the second diviation \n";
+		cout << "the total sales\t " << total_fun() << endl;
+	}
+	void display3(float x, float y)
+	{	cout << "\nin the third diviation \n";
+	cout << "the total sales\t " << total_fun() << endl;
+    }
+	void total_static(float x,float y)
+	{
+		first_half = x;
+		second_half = y;
+	total_sales += first_half + second_half;
+	}
+   static float static_get()
+	{ 
+		return total_sales;
+	}
+
+};
+float div_sales::total_sales=0.0;
+
+int main()
+{
+	float x;
+	float y;
+
+	float a;
+	float b;
+
+	float m;
+	float n;
+	cout << "please enter the sales of the first half in first diviation\n";
+	cin >> x;
+	cout << "please enter the sales of the second half in first diviation\n";
+	cin >> y;
+	cout << "please enter the sales of the first half in second diviation\n";
+	cin >> a;
+	cout << "please enter the sales of the second half in second diviation\n";
+	cin >> b;
+	cout << "please enter the sales of the first half in third diviation\n";
+	cin >> m;
+	cout << "please enter the sales of the second half in third diviation\n";
+	cin >> n;
+
+	div_sales obj;
+	div_sales arr[3] = { obj,obj,obj };
+	arr[0].set(x, y);
+	arr[0].display1(x,y);
+	arr[0].total_static(x, y);
+
+	arr[1].set(a, b);
+	arr[1].display2(a,b);
+	arr[1].total_static(a,b);
+
+	arr[2].set(m, n);
+	arr[2].display3(m,n);
+	arr[2].total_static(m, n);
+
+	cout << "the total sales in the 3 diviations is " << div_sales:: static_get() <<endl;
+
+	system ("pause");
+	return 0;
+}
