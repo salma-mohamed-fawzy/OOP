@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+int power_fun(int& base, int& power)
+{
+	cout << "please enter the base" << endl;
+	cin >> base;
+	cout << "please enter the power" << endl;
+	cin >> power;
+	int result = 1;           //if result=0,the result will always be 0
+	int counter = 0;
+	for (int i = 0; i <= power; i++)
+	{
+		if (counter = i)
+		{
+			result = result * base;
+		}
+		counter++;
+	}
+	return result;
+}
+int main()
+{
+	int x = 0, y = 0;
+	cout << "the result of " << x << " power " << y << " is " << power_fun(x, y) << endl;
+	system("pause");
+	return 0;
+}
