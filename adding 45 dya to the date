@@ -1,0 +1,62 @@
+#include<iostream>
+using namespace std;
+struct date
+{
+	int day;
+	int month;
+	int year;
+};
+void current_date_fun(date array[30])
+{
+	int count=0;
+	for (int i = 0; i <= 30; i++)
+	{
+		cout << "please enter the current day\n";
+		cin >> array[i].day;
+		count++;
+		if (count == 1)
+			i = 30;
+	}
+	count = 0;
+	for (int i = 0; i <= 12; i++)
+	{
+		cout << "please enter the current month\n";
+		cin >> array[i].month;
+		count++;
+		if (count == 1)
+			i = 12;
+	}
+	count = 0;
+	for (int i = 0; i <= 30; i++)
+	{
+		cout << "please enter the current year\n";
+		cin >> array[i].year;
+		count++;
+		if (count == 1)
+			i = 30;
+	}
+	count = 0;
+	for (int i = 0; i <= 30; i++)
+	{
+		for (int k = 0;k <= 12; k++)
+		{
+			array[i].day = array[i].day + 45;
+			if (array[i].day == 30)
+			{
+				array[k].month = array[k].month + 1;
+				cout << "the date after adding 45 days is " << array[i].day << "/" << array[k].month << array[i].year << endl;
+				count++;
+				if (count == 1)
+					i = 30;
+		    }
+		}
+	}
+}
+	
+int main()
+{
+	date array[30];
+	current_date_fun(array);
+	system("pause");
+	return 0;
+}
