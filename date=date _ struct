@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+struct date
+{
+	int day;
+	int month;
+	int year;
+};
+int main()
+{
+	date var1, var2;
+	cout << "please enter the first day\n";
+	cin >> var1.day;
+	cout << "please enter the first month\n";
+	cin >> var1.month;
+	cout << "please enter the first year\n";
+	cin >> var1.year;
+
+	cout << "please enter the second day\n";
+	cin >> var2.day;
+	cout << "please enter the second month\n";
+	cin >> var2.month;
+	cout << "please enter the second year\n";
+	cin >> var2.year;
+
+	if (var1.day == var2.day && var1.month == var2.month&& var1.year == var2.year)
+	{
+		cout << " the two dates are equal\n";
+	}
+	else
+		cout << "the dates are not equal\n";
+
+
+
+	system("pause");
+	return 0;
+}
