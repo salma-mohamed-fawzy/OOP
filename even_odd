@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+void even_odd(int number)
+{
+	if (number % 2 == 0)
+	{
+		cout << "the number is even\n";
+	}
+
+	else if (number % 2 != 0)
+	{
+		cout << "the number is odd\n";
+	}
+	else
+	{
+		cout << "error\n";
+	}
+}
+int main()
+{
+	int num;
+	cout << "please enter the number that you want to know its type" << endl;
+	cin >> num;
+	even_odd(num);
+	system("pause");
+	return 0;
+}
