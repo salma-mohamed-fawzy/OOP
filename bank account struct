@@ -1,0 +1,49 @@
+#include <iostream>
+#include<string>
+using namespace std;
+struct bank_account
+{
+    string name;
+    float account_number;
+    float balance;
+};
+void lessthan200(bank_account arr[10])
+{
+    for (int i = 0; i <= 9; i++)
+    {
+        if (arr[i].balance <= 200)
+        cout << arr[i].name<<endl;
+    }
+}
+void adding100_increment (bank_account arr[10])
+{
+    for (int i = 0; i <= 9; i++)
+    {
+        if (arr[i].balance >= 1000)
+            arr[i].balance = arr[i].balance + 100;
+        if (arr[i].balance >= 1000)
+            cout << arr[i].balance<<endl;
+    }
+   
+}
+int main() 
+{
+    bank_account array[10];
+    for (int i = 0; i <= 9; i++)
+    {
+        cout << "please enter your name\n";
+        cin >> array[i].name;
+        cout << "please enter your account number\n";
+        cin >> array[i].account_number;
+        cout << "please enter your balance\n";
+        cin >> array[i].balance;
+
+    }
+    cout << "people who have less than 200$ in their account are:- \n";
+    lessthan200(array);
+    cout << "more than 1000$ accounts after the increment:- \n";
+    adding100_increment(array);
+
+    system("pause");
+    return 0;
+}
