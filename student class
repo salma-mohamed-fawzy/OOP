@@ -1,0 +1,66 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class student
+{
+private:
+	string stu_name;
+	int id;
+	float total_degrees;
+	float degrees_arr[3];
+public:
+	
+	float compute_total_degrees(float array[3], float total_deg=.0)
+	{
+		cout << "please enter the degrees of the three subjects\n ";
+		for (int i = 0 ; i < 3 ; i++)
+		{
+			cin >> array[i];
+			degrees_arr[i] = array[i];
+			total_deg += total_deg;
+		}
+		total_deg = degrees_arr[0] + degrees_arr[1] + degrees_arr[2];
+		total_degrees = total_deg;
+		return total_deg;
+	};
+	void initialize_fun (string na, int id_num, float array[3], float degs)
+	{
+		cout << "please enter the student name\n";
+		cin >> na;
+		stu_name = na;
+		cout << "please enter the student ID\n";
+		cin >> id_num;
+		id = id_num;
+		compute_total_degrees(array,degs);
+	};
+	string retun_name()
+	{
+		return stu_name;
+	};
+	float return_total()
+	{
+		return total_degrees;
+	};
+};
+int main()
+{
+	student obj;
+	string name;
+	int id=0;
+	float arr[3];
+	float degrees=.0;
+
+	int size;
+	cout << "pleese enter the size of the array\n";
+	cin >> size;                            //size refers to the num of students
+	int * dy_array = new int[size];         //dynamic_array
+	for (int i = 0; i < size; i++)
+	{
+		obj.initialize_fun(name, id, arr, degrees);
+		cout << "the student name is " << obj.retun_name() << endl;
+		cout << "the student total degrees is " << obj.return_total() << endl;
+	}
+
+	system("pause");
+	return 0;
+}
