@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+void swap_function(int &x, int &y)
+{
+	cout << "please enter the firsr number\n";
+	cin >> x;
+	cout << "please enter the second number\n";
+	cin >> y;
+	int z;
+	z = x;
+	x = y;
+	y = z;
+	cout << x << endl;
+	cout <<y<<endl;
+}
+int main()
+{
+	int num1, num2;
+	swap_function(num1, num2);
+	system("pause");
+	return 0;
+}
