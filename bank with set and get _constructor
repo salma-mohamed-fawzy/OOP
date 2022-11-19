@@ -1,0 +1,93 @@
+#include<iostream>
+#include <string>
+using namespace std;
+class bank_account
+{
+private:
+	string name;
+	int account_number;
+	string account_type;
+	float balance_amount;
+public:
+	bank_account(string na,int num,string type,float balance)
+	{
+		name = na;
+		account_number = num;
+		account_type = type;
+		balance_amount = balance;
+	}
+	void set_fun(string na, int num, string type, float balance)
+	{
+		name = na;
+		account_number = num;
+		account_type = type;
+		balance_amount = balance;
+	}
+	string get_type()
+	{
+		return account_type;
+	}
+	float get_balance()
+	{
+		return balance_amount;
+	}
+	void deposit_fun(int num,float blnc,float dpst)
+	{
+		account_number = num;
+		balance_amount = blnc;
+		cout << "please enter the balance amount that ypu want to be a deposit\n";
+		cin >> dpst;
+		balance_amount = blnc + dpst;
+		cout<< "the balance now is "<< balance_amount ;
+	}
+    void withdraw(int num,float blnce, float wsdrw)
+	{
+		account_number = num;
+		balance_amount = blnce;
+		cout << "please enter the balance amount that ypu want to withdraw \n";
+		cin >> wsdrw;
+		balance_amount = blnce - wsdrw;
+		cout << "the balance now is " << balance_amount;
+	}
+	void display(string na, int num, string type, float balance)
+	{
+		cout << "the name of the account owner is " << na<<endl;
+		cout << "the account number is " << num << endl;
+		cout << "the account type is " << type << endl;
+		cout << " the account balance amount is " << balance << endl;
+	}
+
+};
+int main()
+{
+	int size;
+	string name;
+	int num;
+	string type;
+	float balance;
+	float deposit=0.0;
+	float withdraw=0.0;
+	cout << "please enter the size of the array \n";
+	cin >> size;
+	int* arr = new int [size]; 
+	for ( int i = 0; i <= size; i++)
+	{
+		arr[i] = i;
+	}
+	cout << "please enter the name of the account owner \n";
+	cin >> name;
+	cout << "please enter the number of the account \n";
+	cin >> num;
+	cout << "please enter the type of the account (saving or current) \n";
+	cin >> type;
+	cout << "please enter the balance amount of the account\n";
+	cin >> balance;
+	bank_account obj(name, num, type, balance);
+	obj.display(name, num, type, balance);
+	obj.deposit_fun(num, balance, deposit);
+	obj.withdraw(num, balance, withdraw);
+	cout<< obj.get_balance() <<endl ;
+
+	system("pause");
+	return 0;
+}
