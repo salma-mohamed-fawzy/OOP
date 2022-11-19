@@ -1,0 +1,49 @@
+#include<iostream>
+using namespace std;
+class rectangle
+{
+private:
+	float width;
+	float height;
+public:
+	rectangle(float w, float h)
+	{
+		width = w;
+		height = h;
+	}
+	void set_fun(float w,float h)
+	{
+		width = w;
+		height = h;
+	}
+	float get_area()
+	{
+		return width*height;
+	}
+};
+
+int main()
+{
+	float wds1;
+	float hit1;
+	cout << "please enter the height" << endl;
+	cin >> hit1;
+	cout << "please enter the width" << endl;
+	cin >> wds1;
+
+	float wds2;
+	float hit2;
+	cout << "please enter the height" << endl;
+	cin >> hit2;
+	cout << "please enter the width" << endl;
+	cin >> wds2;
+
+	rectangle obj1( wds1, hit1);
+	cout<<"the area of the first object is " << obj1.get_area()<<endl;
+
+	rectangle obj2(wds2,hit2);
+	cout << "the area of the first object is " << obj2.get_area()<<endl;
+
+	system("pause");
+	return 0;
+}
