@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+float area(float length, float width)      //rectangle area = length*width
+{
+	float rec_area = length * width;
+	return rec_area;
+}
+float area(float length)                  //square area = length*length
+{
+	float square_area = length * length;
+	return square_area;
+}
+double area(double r )      //circle area = r*r*(22/7)
+{
+	const double constant = 22 / 7;
+	double circle_area = constant*r*r;
+	return circle_area;
+}
+int main()
+{
+	float length, width,length1;
+	double r;
+	cout << "please enter the length of the rectangle\n";
+	cin >> length;
+	cout << "please enter the width of the rectangle\n";
+	cin >> width;
+	cout<<"the rectangle area is" << area(length, width)<<endl;
+	cout << "please enter the side length  of the square\n";
+	cin >> length1;
+	cout << "the square area is" << area(length1)<<endl;
+	cout << "please enter the radius of the circle\n";
+	cin >> r;
+	cout << "the circle area is" << area(r)<<endl;
+	system("pause");
+	return 0;
+}
