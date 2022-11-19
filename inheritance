@@ -1,0 +1,64 @@
+#include<iostream>
+using namespace std;
+class shape
+{
+protected:
+	int width;
+	int height;
+public:
+	void setvalues(int x, int y)
+	{
+		width = x;
+		height = y;
+	}
+};
+class rectangle : public shape
+{
+public:
+	int recarea() { return width * height; }
+};
+class triangle : public shape
+{
+public:
+	int triarea() { return (width * height)/2; }
+};
+int main()
+{
+	int x, y;
+	cout << "please enter the two numbers  (ordered)\n";
+	cin >> x >> y;
+	rectangle obj1;
+	triangle obj2;
+	obj1.setvalues(x,y);
+	cout<<"the rectangle area is " <<obj1.recarea()<<endl;
+	obj2.setvalues(x, y);
+	cout<< "the triangle area is " <<obj2.triarea()<<endl;
+	system("pause");
+	return 0;
+}
+/*
+class telephone
+{
+protected:
+	string phonetype;
+public:
+	void ring()
+	{
+		cout << "ringing the "<<phonetype<<endl ;
+	}
+};
+class electronicphone : public telephone
+{
+public:
+	electronicphone() 
+	{
+		phonetype = " digital ";
+	}
+};
+int main()
+{
+	electronicphone obj;
+	obj.ring();
+	system("pause");
+	return 0;
+}*/
