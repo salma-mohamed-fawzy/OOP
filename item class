@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+class item
+{private:
+	int data;
+public:
+	void set_data(int da)
+	{
+		cout << "please enter the data\n";
+		cin >> da;
+		data = da;
+	}
+	int get_data()
+	{
+		return data;
+	}
+};
+int main()
+{
+	int data=0;
+
+	item obj1;
+	obj1.set_data(data);
+	obj1.get_data();
+
+	item obj2;
+	obj2.set_data(data);
+	obj2.get_data();
+
+	item obj3;
+	obj3.set_data(data);
+	obj3.get_data();
+
+	system("pause");
+	return 0;
+}
