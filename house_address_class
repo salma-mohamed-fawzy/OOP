@@ -1,0 +1,73 @@
+#include <iostream>
+#include<string>
+using namespace std;
+class house
+{
+private:
+	int number;
+	string city;
+	string street;
+	float price;
+public:
+	void set_house_number(int num)
+	{
+		 number = num;
+	};
+	void set_house_city(string ci)
+	{
+		city = ci ;
+	};
+	void set_house_street(string str)
+	{
+		street=str;
+	};
+	void set_house_price(float pri)
+	{
+		price=pri;
+	};
+	double property_tax(double tax_rate)
+	{
+		tax_rate = price * tax_rate;
+		return tax_rate;
+	};
+	void print(double tax_rate)
+	{
+		cout << "the house data is as following\n";
+		cout << "the house number is " <<number << endl;
+		cout << "the house city is " << city << endl;
+		cout << "the house street is " << street << endl;
+		cout << "the house price is " << price << endl;
+		cout << "Ana the rpoperty tax is"<<property_tax(tax_rate);
+		
+	};
+};
+int main()
+{
+
+	house object1,object2;
+	cout << "the first house object features :-" << endl;
+	object1.set_house_number(2020);
+	object1.set_house_street("main");
+	object1.set_house_city ( "san diego");
+	object1.set_house_price(200000);
+	object1.property_tax(0.05);
+	object1.print(0.05);
+
+	house* sptr;
+	sptr = & object2;
+	cout << endl;
+	cout << "*****************************************************************";
+	cout << "\n the second house object features :-" << endl;
+
+	sptr->set_house_number(1540);
+	sptr->set_house_street("tula");
+	sptr->set_house_city("portland");
+	sptr->set_house_price(153000);
+	sptr->property_tax(0.08);
+	sptr->print(0.08);
+
+	//delete sptr;             //why?!!!!
+
+	system("pause");
+	return 0; 
+}
